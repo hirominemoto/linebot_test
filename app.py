@@ -31,7 +31,7 @@ def callback():
 def handle_message(event):
     user_text = event.message.text
 
-    # ChatGPT へリクエスト
+    # ChatGPT API (v0.28.1)
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
@@ -50,11 +50,12 @@ def handle_message(event):
             }
         ]
     )
-    bot_reply = response.choices[0].message.content.strip()
+    bot_reply = response.choices[0].message["content"].strip()
 
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=bot_reply))
+
 
 
 
