@@ -1,3 +1,4 @@
-Flask
-line-bot-sdk
-gunicorn
+Flask==3.1.1
+line-bot-sdk==3.1.0
+gunicorn==23.0.0
+openai
